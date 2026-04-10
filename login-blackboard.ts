@@ -5,10 +5,6 @@ const URL_LOGIN = 'https://senac.blackboard.com/';
 const USUARIO = '10773755900';
 const SENHA = '10773755900';
 
-const EMAIL_DESTINO = 'gabriel.menon@pr.senac.br';
-const EMAIL_REMETENTE = '<seu-email@gmail.com>';
-const EMAIL_SENHA = '<sua-app-password>';
-
 async function abrirNavegador(): Promise<{ browser: Browser; page: Page }> {
   const browser = await puppeteer.launch({ headless: false, defaultViewport: null });
   const page = await browser.newPage();
