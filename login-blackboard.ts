@@ -66,4 +66,4 @@ async function main(): Promise<void> {
   await browser.close();
 }
 
-main();
+await main();
