@@ -45,11 +45,10 @@ async function aguardarNavegacao(page: Page): Promise<void> {
   }
 }
 
-async function salvarEvidencia(page: Page): Promise<string> {
+async function salvarEvidencia(page: Page): Promise<void> {
   const caminho = path.resolve('login-sucesso.png');
   await page.screenshot({ path: caminho, fullPage: true });
   console.log('Screenshot salvo em', caminho);
-  return caminho;
 }
 
 async function main(): Promise<void> {
@@ -66,4 +65,4 @@ async function main(): Promise<void> {
   await browser.close();
 }
 
-await main();
+main();

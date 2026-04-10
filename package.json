@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:scrapper": "node dist/scrapper/server/server.mjs",
-    "login": "npx tsx login-blackboard.ts"
+    "login": "npx tsx login-blackboard.mts"
   },
   "private": true,
   "packageManager": "npm@11.12.1",
