@@ -1,8 +1,13 @@
 import puppeteer, { Browser, Page } from 'puppeteer';
+import path from 'path';
 
 const URL_LOGIN = 'https://senac.blackboard.com/';
 const USUARIO = '10773755900';
 const SENHA = '10773755900';
+
+const EMAIL_DESTINO = 'gabriel.menon@pr.senac.br';
+const EMAIL_REMETENTE = '<seu-email@gmail.com>';
+const EMAIL_SENHA = '<sua-app-password>';
 
 async function abrirNavegador(): Promise<{ browser: Browser; page: Page }> {
   const browser = await puppeteer.launch({ headless: false, defaultViewport: null });
@@ -44,9 +49,11 @@ async function aguardarNavegacao(page: Page): Promise<void> {
   }
 }
 
-async function salvarEvidencia(page: Page): Promise<void> {
-  await page.screenshot({ path: 'login-sucesso.png', fullPage: true });
-  console.log('Screenshot salvo em login-sucesso.png');
+async function salvarEvidencia(page: Page): Promise<string> {
+  const caminho = path.resolve('login-sucesso.png');
+  await page.screenshot({ path: caminho, fullPage: true });
+  console.log('Screenshot salvo em', caminho);
+  return caminho;
 }
 
 async function main(): Promise<void> {
