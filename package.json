@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:scrapper": "node dist/scrapper/server/server.mjs"
+    "serve:ssr:scrapper": "node dist/scrapper/server/server.mjs",
+    "login": "npx tsx login-blackboard.ts"
   },
   "private": true,
   "packageManager": "npm@11.12.1",
@@ -21,6 +22,7 @@
     "@angular/router": "^21.2.0",
     "@angular/ssr": "^21.2.7",
     "express": "^5.1.0",
+    "puppeteer": "^24.40.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },
@@ -32,6 +34,7 @@
     "@types/node": "^20.17.19",
     "jsdom": "^28.0.0",
     "prettier": "^3.8.1",
+    "tsx": "^4.21.0",
     "typescript": "~5.9.2",
     "vitest": "^4.0.8"
   }
